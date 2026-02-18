@@ -1,0 +1,34 @@
+local CoreGui = game:GetService("StarterGui")
+
+CoreGui:SetCore("SendNotification", {
+    Title = "KDL（APT）第1次更新",
+    Text = "正在加载",
+    Duration = 5, 
+})
+print("反挂机开启")
+		local vu = game:GetService("VirtualUser")
+		game:GetService("Players").LocalPlayer.Idled:connect(function()
+		   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+		   wait(1)
+		   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+		end)
+local OrionLib = loadstring(game:HttpGet('https://pastebin.com/raw/SePpsSPZ'))()
+local Window = OrionLib:MakeWindow({Name = " KDL第一次更新", HidePremium = false, SaveConfig = true,IntroText = "欢迎使用APT脚本", ConfigFolder = "欢迎APT脚本"})
+local about = Window:MakeTab({
+    Name = "KDL",
+    Icon = "rbxassetid://11109742737",
+    PremiumOnly = false
+})
+
+about:AddParagraph("您的用户名:"," "..game.Players.LocalPlayer.Name.."")
+about:AddParagraph("KDL:"," "..identifyexecutor().."")
+about:AddParagraph("QQ群 : ","暂无")
+
+local Tab = Window:MakeTab({
+  Name = "通用",
+  Icon = "rbxassetid://12493754210",
+  PremiumOnly = false
+  })
+Tab:AddButton({
+	Name = "玩家控制",
+	Callback = function()
